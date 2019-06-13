@@ -9,6 +9,7 @@ use IO\Helper\TemplateContainer;
 use IO\Extensions\Functions\Partial;
 use IO\Services\ItemSearch\Helper\ResultFieldTemplate;
 use Plenty\Plugin\ConfigRepository;
+use CeresCoconut\Extensions\TwigBin2HexFunction;
 
 
 /**
@@ -27,6 +28,8 @@ class CeresCoconutServiceProvider extends ServiceProvider
     public function boot(Twig $twig, Dispatcher $dispatcher, ConfigRepository $config)
     {
         $enabledOverrides = explode(", ", $config->get("CeresCoconut.templates.override"));
+
+        $twig->addExtension(TwigBin2HexFunction::class);
 
         // Override partials
         $dispatcher->listen('IO.init.templates', function (Partial $partial) use ($enabledOverrides)
@@ -324,19 +327,19 @@ class CeresCoconutServiceProvider extends ServiceProvider
             $dispatcher->listen( 'IO.ResultFields.*', function(ResultFieldTemplate $templateContainer) use ($enabledResultFields)
             {
                 $templatesToOverride = [];
-                
+
                 // Override list item result fields
                 if (in_array("list_item", $enabledResultFields) || in_array("all", $enabledResultFields))
                 {
                     $templatesToOverride[ResultFieldTemplate::TEMPLATE_LIST_ITEM] = 'CeresCoconut::ResultFields.ListItem';
                 }
-                
+
                 // Override single item view result fields
                 if (in_array("single_item", $enabledResultFields) || in_array("all", $enabledResultFields))
                 {
                     $templatesToOverride[ResultFieldTemplate::TEMPLATE_SINGLE_ITEM] = 'CeresCoconut::ResultFields.SingleItem';
                 }
-                
+
                 // Override basket item result fields
                 if (in_array("basket_item", $enabledResultFields) || in_array("all", $enabledResultFields))
                 {
@@ -348,7 +351,7 @@ class CeresCoconutServiceProvider extends ServiceProvider
                 {
                     $templatesToOverride[ResultFieldTemplate::TEMPLATE_AUTOCOMPLETE_ITEM_LIST] = 'CeresCoconut::ResultFields.AutoCompleteListItem';
                 }
-                
+
                 // Override category tree result fields
                 if (in_array("category_tree", $enabledResultFields) || in_array("all", $enabledResultFields))
                 {
