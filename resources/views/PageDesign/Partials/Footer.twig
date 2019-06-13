@@ -1,1 +1,270 @@
-<!-- Insert markup for footer here -->
+{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+
+{% set numberOfCols = config('Ceres.footer.number_of_cols') %}
+{% set colSize = (12 / (numberOfCols + 1)) %}
+{% set displayedCategories = [] %}
+{% set numberOfFeatures = config('Ceres.footer.number_of_features') %}
+{% set topButtonPosition = config('Ceres.footer.to_top_button') %}
+
+{% set footerContainer = LayoutContainer.show("Ceres::Footer") | trim %}
+{% if footerContainer is empty %}
+
+<div class="footer">
+
+    <div class="{% if topButtonPosition == "right" %}back-to-top{% else %}back-to-top-center{% endif %} hidden-sm-down">
+        <i class="fa fa-chevron-up"></i>
+    </div>
+
+    <div class="to-top d-md-none" v-scroll-to-top>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </div>
+
+    {% if numberOfFeatures > 0 %}
+        <div class="footer-features py-3 container-max">
+            <div class="row">
+                {% for i in 1..numberOfFeatures %}
+                    <div class="col-12 col-sm-4 text-center">
+                        <i class="fa fa-check text-success" aria-hidden="true"></i>
+                        {{ trans('Ceres::Template.footerStoreFeature' ~ i) }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+
+    <div class="container-max footer-content">
+        <div class="row">
+            <div class="col-12">
+                <div class="footer-services mt-4">
+                    {% set paymentMethodContent = LayoutContainer.show("Ceres::Homepage.PaymentMethods") %}
+                    {% if paymentMethodContent|trim is not empty %}
+                        <div class="services-payment mb-3">
+                            <strong class="services-title">{{ trans("Ceres::Template.footerPaymentMethods") }}</strong>
+                            {{ paymentMethodContent }}
+                        </div>
+                    {% endif %}
+                    {% set shippingContent = LayoutContainer.show("Ceres::Homepage.Shipping") %}
+                    {% if shippingContent|trim is not empty %}
+                        <div class="services-shipping mb-3">
+                            <strong class="services-title">{{ trans("Ceres::Template.footerOrderShippedBy") }}</strong>
+                            {{ shippingContent }}
+                        </div>
+                    {% endif %}
+                    {% set certifiedContent = LayoutContainer.show("Ceres::Homepage.Certified") %}
+                    {% if certifiedContent|trim is not empty %}
+                        <div class="services-certificate mb-3">
+                            <strong class="services-title">{{ trans("Ceres::Template.footerCertifiedBy") }}</strong>
+                            {{ certifiedContent }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <hr class="my-4">
+
+                <div class="col-6 col-sm-3 col-lg-2">
+                    <nav class="footer-column mb-4">
+                        <h2 class="h5">Kundenservice</h2>
+                        <ul class="list-unstyled">
+							<li><a href="/content/ueber-uns">Über uns</a></li>
+							<li><a href="/content/jobs-karriere">Jobs und Karriere</a></li>
+							<li><a href="/content/versandkosten">Zahlung und Versand</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-6 col-sm-3 col-lg-2">
+                    <nav class="footer-column mb-4">
+                        <h2 class="h5">Rechtliche Angaben</h2>
+                        <ul class="list-unstyled">
+							<li><a href="/content/widerrufsbelehrung-muster-widerrufsformular">Widerrufsrecht</a></li>
+							<li><a href="/content/sicherheit-datenschutz">Datenschutzerklärung</a></li>
+							<li><a href="/content/agb">AGB und Kundeninformationen</a></li>
+							<li><a href="/content/impressum">Impressum</a></li>
+                        </ul>
+                    </nav>
+                </div>
+              {#  <div class="col-6 col-sm-3 col-lg-6">
+                <h2 class="h5">Zahlungsmethoden</h2>
+                <ul class="image-list">
+                	<li><img src="https://cdn02.plentymarkets.com/zyf018ezd17w/frontend/ceres/icons/paypal2.png" alt="PayPal"></li>
+                	<li><img src="https://cdn02.plentymarkets.com/zyf018ezd17w/frontend/ceres/icons/amazonpay2.png" alt="Amazon Pay"></li>
+
+                	<li><img src="https://cdn02.plentymarkets.com/zyf018ezd17w/frontend/ceres/icons/klarnasofort.png" alt="Sofort"></li>
+                	<li><img src="https://cdn02.plentymarkets.com/zyf018ezd17w/frontend/ceres/icons/vorkasse.png" alt="Vorkasse"></li>
+                </ul>
+                <h2 class="h5">Unsere Versandpartner</h2>
+                <ul class="image-list">
+                	<li><img src="https://cdn02.plentymarkets.com/zyf018ezd17w/frontend/ceres/icons/paypal2.png" alt="DHL"></li>
+                	<li><img src="https://cdn02.plentymarkets.com/zyf018ezd17w/frontend/ceres/icons/amazonpay2.png" alt="GLS"></li>
+                </ul>
+                </div> #}
+                <div class="col-6 col-sm-3 col-lg-2">
+                <nav class="footer-column mb-4 socials">
+                        <h2 class="h5">Socials</h2>
+                        <ul class="list-unstyled">
+							<li><a href="https://de-de.facebook.com/pages/Neptunmaster/238910912804805" target="_blank"><i class="fa fa-facebook"></i> <span>Facebook</span></a></li>
+                			<li><a href="https://twitter.com/Neptunmaster" target="_blank"><i class="fa fa-twitter"></i> <span>Twitter</span></a></li>
+                			<li><i class="fa fa-rss"></i> <span>Blog</span></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-6 col-sm-3 col-lg-2">
+                <nav class="footer-column mb-4 zahlung">
+                        <h2 class="h5">Zahlungsmethoden</h2>
+                        <ul class="list-unstyled">
+					<li><img src="https://cdn02.plentymarkets.com/zyf018ezd17w/frontend/ceres/icons/paypal2.png" alt="PayPal"></li>
+                	<li><img src="https://cdn02.plentymarkets.com/zyf018ezd17w/frontend/ceres/icons/amazonpay2.png" alt="Amazon Pay"></li>
+                	<li><img src="https://cdn02.plentymarkets.com/zyf018ezd17w/frontend/ceres/icons/klarnasofort.png" alt="Sofort"></li>
+                	<li><img src="https://cdn02.plentymarkets.com/zyf018ezd17w/frontend/ceres/icons/vorkasse.png" alt="Vorkasse"></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-6 col-sm-3 col-lg-2">
+                <nav class="footer-column mb-4 versand">
+                        <h2 class="h5">Versandpartner</h2>
+                        <ul class="list-unstyled">
+							<li><img src="https://cdn02.plentymarkets.com/zyf018ezd17w/frontend/ceres/icons/logo-dhl2.png" alt="DHL"></li>
+                			<li><img src="https://cdn02.plentymarkets.com/zyf018ezd17w/frontend/ceres/icons/logo-gls2.png" alt="GLS"></li>
+                        </ul>
+                    </nav>
+                </div>
+ 				<div class="col-6 col-sm-3 col-lg-2">
+          <!-- Ausgezeichnet.org-Siegel: Anfang -->
+					<div id="auorg-bg">
+					<a rel="nofollow" href="https://www.ausgezeichnet.org" target="_blank" title="Unabh&auml;ngige Bewertungen, Kundenbewertungen und G&uuml;tesiegel von Ausgezeichnet.org" class="auorg-br">
+					<span style="font-size:8px;font-weight:normal;text-transform:uppercase;">Ausgezeichnet.org</span></a>
+					</div>
+					<script2 type="text/javascript" src="//siegel.ausgezeichnet.org/widgets/js/52375dc60cf2f29486b27d36/widget.js"></script>
+					<!-- Ausgezeichnet.org-Siegel: Ende -->
+ 				</div>
+
+            <hr class="d-sm-none my-4">
+
+        </div>
+       {# <div class="row">
+        	<div class="col-12 social">
+        		<a href=""><i class="fa fa-facebook"></i></a>
+        		<a href=""><i class="fa fa-twitter"></i></a>
+        		<a href=""><i class="fa fa-blog"></i></a>
+        	</div>
+        </div> #}
+
+		<hr class="orange" />
+		<h3 class="h5">Unsere Marken</h3>
+        <div class="row marken">
+        	<div class="col-2">
+        	<ul class="list-unstyled">
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Accurate&amp;Params[Producer]=Accurate">Accurate</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Behr&amp;Params[Producer]=Behr">Behr</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Berkley&amp;Params[Producer]=Berkley">Berkley</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Boone&amp;Params[Producer]=Boone">Boone</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Bulldozer&amp;Params[Producer]=Bulldozer">Bulldozer</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Carp Sounder&amp;Params[Producer]=Carp Sounder">Carp Sounder</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Castaic&amp;Params[Producer]=Castaic">Castaic</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Cooper Products&amp;Params[Producer]=Cooper Products">Cooper Products</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Cygnet&amp;Params[Producer]=Cygnet">Cygnet</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Delkim&amp;Params[Producer]=Delkim">Delkim</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Dissel&amp;Params[Producer]=Dissel">Dissel</a></li>
+             </ul>
+        	</div>
+        	<div class="col-2">
+        	<ul class="list-unstyled">
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Dynamite Baits&amp;Params[Producer]=Dynamite Baits">Dynamite Baits</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Eagle Claw&amp;Params[Producer]=Eagle Claw">Eagle Claw</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=ECHEVEAUX&amp;Params[Producer]=ECHEVEAUX">ECHEVEAUX</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Ehmanns&amp;Params[Producer]=Ehmanns">Ehmanns</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Expert Anglers&amp;Params[Producer]=Expert Anglers">Expert Anglers</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Fox&amp;Params[Producer]=Fox">Fox</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Fox Rage&amp;Params[Producer]=Fox Rage">Fox Rage</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Gamakatsu&amp;Params[Producer]=Gamakatsu">Gamakatsu</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Gerber&amp;Params[Producer]=Gerber">Gerber</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Grebenstein&amp;Params[Producer]=Grebenstein">Grebenstein</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Hansen&amp;Params[Producer]=Hansen">Hansen</a></li>
+            </ul>
+            </div>
+        	<div class="col-2">
+        	<ul class="list-unstyled">
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Herbertz&amp;Params[Producer]=Herbertz">Herbertz</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Jackson&amp;Params[Producer]=Jackson">Jackson</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Jan Gutjahr&amp;Params[Producer]=Jan Gutjahr">Jan Gutjahr</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Kevin Maddocks&amp;Params[Producer]=Kevin Maddocks">Kevin Maddocks</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Korda&amp;Params[Producer]=Korda">Korda</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Kryston&amp;Params[Producer]=Kryston">Kryston</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=La.va&amp;Params[Producer]=Accurate">La.va</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Lucky Craft&amp;Params[Producer]=Lucky Craft">Lucky Craft</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Lure Jensen&amp;Params[Producer]=Lure Jensen">Lure Jensen</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Mantikor&amp;Params[Producer]=Mantikor">Mantikor</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Marttiini&amp;Params[Producer]=Marttiini">Marttiini</a></li>
+            </ul>
+        	</div>
+        	<div class="col-2">
+        	<ul class="list-unstyled">
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Maruto&amp;Params[Producer]=Maruto">Maruto</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Mepps&amp;Params[Producer]=Mepps">Mepps</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Mosella&amp;Params[Producer]=Mosella">Mosella</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Nash&amp;Params[Producer]=Nash">Nash</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Neptunmaster&amp;Params[Producer]=Neptunmaster">Neptunmaster</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Okuma&amp;Params[Producer]=Okuma">Okuma</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Opinel&amp;Params[Producer]=Opinel">Opinel</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Owner&amp;Params[Producer]=Owner">Owner</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Paladin&amp;Params[Producer]=Paladin">Paladin</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Pelzer&amp;Params[Producer]=Pelzer">Pelzer</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Pilkmaxx&amp;Params[Producer]=Pilkmaxx">Pilkmaxx</a></li>
+            </ul>
+        	</div>
+        	<div class="col-2">
+        	<ul class="list-unstyled">
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Plano&amp;Params[Producer]=Plano">Plano</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Rapala&amp;Params[Producer]=Rapala">Rapala</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Relags&amp;Params[Producer]=Relags">Relags</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Robinson&amp;Params[Producer]=Robinson">Robinson</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Rosco&amp;Params[Producer]=Rosco">Rosco</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Salmo&amp;Params[Producer]=Salmo">Salmo</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Savage Gear&amp;Params[Producer]=Savage Gear">Savage Gear</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Savu&amp;Params[Producer]=Savu">Savu</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=ShadXpert&amp;Params[Producer]=ShadXpert">ShadXpert</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Silkekrogen&amp;Params[Producer]=Silkekrogen">Silkekrogen</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Skeet Reese&amp;Params[Producer]=Skeet Reese">Skeet Reese</a></li>
+            </ul>
+        	</div>
+        	<div class="col-2">
+        	<ul class="list-unstyled">
+        	  <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Spro&amp;Params[Producer]=Spro">Spro</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Storm&amp;Params[Producer]=Storm">Storm</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Taffi&amp;Params[Producer]=Taffi">Taffi</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Varivas&amp;Params[Producer]=Varivas">Varivas</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Walleye Fishing Sport&amp;Params[Producer]=Walleye Fishing Sport">Walleye Fishing Sport</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=WFT&amp;Params[Producer]=WFT">WFT</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=Wikam&amp;Params[Producer]=Wikam">Wikam</a></li>
+              <li><a href="/?ActionCall=WebActionArticleSearch&amp;Params[SearchParam]=>XCB&amp;Params[Producer]=>XCB">XCB</a></li>
+            </ul>
+        	</div>
+        </div>
+
+        <div class="copyright text-center p-2">
+            <p><small>Versandkostenfreie Lieferungen innerhalb Deutschlands ab 50 EUR Warenwert gelten nur bei direktem Einkauf in unserem Webshop <a rel="nofollow" href="https://www.angeln-neptunmaster.de">www.angeln-neptunmaster.de</a></small>
+            <br /><small>Alle Preise inklusive MwSt. zzgl. Versandkosten | &copy; Copyright {{ "now" | date("Y") }} Neptunmaster GmbH</small></p>
+        </div>
+    </div>
+</div>
+{% else %}
+    <div class="footer container-max">
+        <div class="row">
+            <div class="col clearfix">
+                {{ footerContainer | raw }}
+            </div>
+        </div>
+        <div class="{% if topButtonPosition == "right" %}back-to-top{% else %}back-to-top-center{% endif %} hidden-sm-down">
+            <i class="fa fa-chevron-up"></i>
+        </div>
+
+        <div class="row">
+            <div class="to-top hidden-md-up" v-scroll-to-top>
+                <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+{% endif %}

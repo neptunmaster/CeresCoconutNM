@@ -1,1 +1,64 @@
-/* Enter your CSS here */
+@font-face{font-family:Comfortaa;font-style:normal;font-weight:400;src:local('Comfortaa Regular'),local('Comfortaa-Regular'),url(https://cdn02.plentymarkets.com/zyf018ezd17w/frontend/ceres/font/Comfortaa.ttf) format('truetype')}
+#page-header .container-max {max-width: 1340px}
+@media(min-width:992px) {
+.wrapper-main {margin-top: 157px;}
+}
+.wrapper-main #page-header.top-bar {background-color: #fff; box-shadow: 0px 1px 4px #888;}
+.page-home .wrapper-main .widget.widget-image-box.widget-primary .widget-caption {text-align: center; font-size: 1.2rem; text-transform: uppercase;}
+.wrapper-main .navbar {background-color: #0360A5}
+.claim {display: none; font-size: 0.8rem;text-transform: uppercase;margin: 0.5rem;text-align: center; color: #0360A5; position: absolute; top:60px; left: 50px;}
+.top-bar .controls-list .control-basket .toggle-basket-preview {background-color:#EE7624}
+.top-bar .controls-list > li a:not(.btn) {color: #888}
+.top-bar .controls-list > li a:not(.btn):hover {background: #024373}
+.top-bar .list-inline .list-inline-item #login-change a span {padding-left: 0.3rem}
+/* .navbar-brand {padding: 1rem 0 1.5rem 0; margin-right: 5rem;} */
+.navbar-brand {padding: 0; margin-right: 5rem;}
+/* .navbar-brand img {max-height: 5rem} */
+.navbar-brand img {max-height: 8rem}
+.top-bar .search-shown .always-visible-search .search-box-shadow-frame .search-submit {color: #fff; background-color: #EE7624; opacity: 1;}
+.top-bar .search-shown .always-visible-search .search-box-shadow-frame .search-submit:hover {opacity: 0.9}
+.siegel {margin: 0 5rem;}
+nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu {float: none !important; justify-content: center; -webkit-box-pack:center; -ms-flex-pack:center; text-transform: uppercase;color: #fff; font-weight: 700; font-size: 0.9rem;}
+nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li {}
+#mainNavbarCollapsable ul.mainmenu > li.ddown > a::after {display: none;}
+nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li:last-child {border-right: none}
+.no-touch #mainNavbarCollapsable ul.mainmenu > li:hover, .touch #mainNavbarCollapsable ul.mainmenu > li.hover {background-color: #024373;}
+#mainNavbarCollapsable ul.mainmenu > li > a {padding: 1.0em 0.5rem;}
+@media(min-width:1300px) {
+#mainNavbarCollapsable ul.mainmenu > li > a {padding: 1.0em 0.7rem;}
+}
+nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {box-shadow: 0px 1px 4px #888;}
+nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li {line-height: 190%;}
+nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li > a {text-transform: none; }
+nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li.level2 > a {font-weight: normal; color: #444;}
+nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li.level2 > a::before {font: normal normal normal 14px/1 FontAwesome; content: "\f0da"; color: #0360A5; padding-right: 5px; padding-left: 3px;}
+.footer .footer-content {max-width: 1340px}
+.footer {background-color: #011f44; color: #fff}
+.footer a {color: #fff}
+.footer a:hover, .footer a:focus {text-decoration: underline}
+.footer .image-list {list-style: none; background: #fff; display: flex; flex-flow: wrap; align-items:center;padding:0;border-radius:6px}
+.footer .image-list li {flex:content;text-align:center;padding:0.5rem}
+.footer .socials li i {font-size: 2rem; width: 30px}
+.footer .socials span {padding-left: 0.5rem}
+.footer li {padding: 0.3rem 0}
+.footer .zahlung li, .footer .versand li {background: #fff;padding: 0; text-align: center; margin:0.5rem 0; border-radius: 3px; height: 48px; line-height: 48px}
+.footer .marken li {font-size: 0.9rem; padding: 0.1rem 0}
+#page-body .page-content {background: #fff; margin-top: 30px; margin-bottom: 30px; padding: 30px}
+.textblock {border: 1px solid #eee; background: #fff; padding: 30px;font-family:Comfortaa,cursive; }
+.textblock h1, .textblock h2 {color: #011f44; padding: 0 0 1rem 0}
+.textblock h1 {font-size: 1.3rem}
+.textblock h2 {font-size: 1.2rem}
+.textblock h3 {color: #0360A5; font-size: 1.1rem;}
+.list-item-carousel .cmp-product-thumb .thumb-image {width: 80%}
+.sidebar-categories {border: 1px solid #fff; box-shadow: 0px 0px 3px 1px #ccc; background: #fff;font-family:Comfortaa,cursive; }
+.sidebar-categories .category-title {background: #0360A5; color: #fff;}
+.sidebar-categories ul li.active > a {background: #EE7624; color: #fff;}
+.sidebar-categories ul li ul {background: #f4f4f4;}
+.sidebar-categories ul li a:hover {background: #a4a4a4; color: #fff;}
+@media(min-width:576px) {
+.cmp-product-thumb {border: 1px solid #F7F7F9;}
+}
+.category-description {font-family:Comfortaa,cursive; border: 1px solid #F7F7F9; padding: 1.5rem;}
+.category-description h1 {font-size: 1.3rem;color: #011f44;}
+.category-description h2 {font-size: 1.2rem;color: #0360A5;}
+.category-title {font-family:Comfortaa,cursive; color:#0360A5;}

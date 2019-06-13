@@ -1,1 +1,22 @@
-<!-- Insert markup for navigation here -->
+{% set lang         = services.sessionStorage.getLang() %}
+{% set showHeaderNavBar = config("Ceres.header.show_navbars") %}
+{% set useMegaMenu  = config("Ceres.header.megamenu_levels") > 1 %}
+
+<nav class="navbar{% if useMegaMenu %} megamenu{%endif%}">
+    <div class="container-max">
+        <div class="row mx-0">
+
+
+            <div id="mainNavbarCollapsable" class="d-none d-lg-block">
+                <ul class="breadcrumb">
+                    <li class="btnClose"></li>
+                </ul>
+                {% if showHeaderNavBar == "top" or showHeaderNavBar == "both" or not services.template.isCategory() %}
+                    {# includeCached('Ceres::PageDesign.Partials.Header.NavigationList.twig') #}
+                    {% include "CeresCoconut::PageDesign.Partials.Header.NavigationList" %}
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</nav>

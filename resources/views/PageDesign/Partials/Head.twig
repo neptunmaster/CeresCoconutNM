@@ -1,1 +1,138 @@
-<!-- Insert markup for head here -->
+<!-- BEGIN SHOPGATE MOBILE HEADER CODE -->
+{% if services.template.isCurrentTemplate('tpl.home') %}
+<link rel="alternate" media="only screen and (max-width: 640px)" href="http://neptunmaster.shopgate.com/"/>
+{% elseif services.template.isCurrentTemplate('tpl.item') %}
+<link rel="alternate" media="only screen and (max-width: 640px)" href="http://neptunmaster.shopgate.com/itempublic/{{item.documents[0].data.variation.id}}"/>
+{% elseif services.template.isCurrentTemplate('tpl.category.item') %}
+<link rel="alternate" media="only screen and (max-width: 640px)" href="http://neptunmaster.shopgate.com/category/{{ category.id }}"/>
+{% endif %}
+<script type="text/javascript">
+var _shopgate = {};
+_shopgate.shop_number = "10675";
+{% if services.template.isCurrentTemplate('tpl.home') %}
+_shopgate.redirect = "start";
+{% elseif services.template.isCurrentTemplate('tpl.item') %}
+_shopgate.redirect = "item";
+_shopgate.item_number_public = "{{ item.documents[0].data.variation.id }}";
+{% elseif services.template.isCurrentTemplate('tpl.category.item') %}
+_shopgate.redirect = "category";
+_shopgate.category_number = "{{ category.id }}";
+{% endif %}
+if(typeof _shopgate.redirect != 'undefined')
+{ _shopgate.host = (("https:" == document.location.protocol) ? "https://static-ssl.shopgate.com" : "http://static.shopgate.com"); document.write(unescape("%3Cscript src='" + _shopgate.host + "/mobile_header/" + _shopgate.shop_number + ".js' type='text/javascript' %3E%3C/script%3E")); }
+</script>
+<!-- END SHOPGATE MOBILE HEADER CODE -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="plentymarkets" />
+
+{% set lang = services.sessionStorage.getLang() %}
+
+{% if ceresConfig.global.favicon is empty %}
+    {% set favicon = url ~ '/tpl/favicon_' ~ webstoreConfig.webstoreId ~ '.ico' %}
+{% else %}
+    {% set favicon = ceresConfig.global.favicon %}
+{% endif %}
+
+<link rel="icon" type="img/ico" href="{{ favicon }}">
+
+{% set canonicalUrl = services.url.getCanonicalURL() %}
+{% set languageUrls = services.url.getLanguageURLs() %}
+
+{% if canonicalUrl is not null %}
+    <link rel="canonical" href="{{ canonicalUrl }}">
+{% endif %}
+
+{% if services.url.isCanonical() %}
+    {% for language, url in languageUrls %}
+        <link rel="alternate" hreflang="{{language}}" href="{{url}}"/>
+    {% endfor %}
+{% endif %}
+
+<style data-font="Custom-Font">
+    {% set customFont =
+        {
+            regular: config('Ceres.custom-font-regular'),
+            bold: config('Ceres.custom-font-bold'),
+            italic: config('Ceres.custom-font-italic'),
+            boldItalic: config('Ceres.custom-font-bold-italic')
+        }
+    %}
+
+    {% if customFont.regular %}
+        @font-face {
+            font-family: "Custom-Font";
+            src: url("{{ customFont.regular }}");
+        }
+    {% endif %}
+    {% if customFont.bold %}
+        @font-face {
+            font-family: "Custom-Font";
+            src: url("{{ customFont.bold }}");
+            font-weight: bold;
+        }
+    {% endif %}
+    {% if customFont.italic %}
+        @font-face {
+            font-family: "Custom-Font";
+            src: url("{{ customFont.italic }}");
+            font-style: italic;
+        }
+    {% endif %}
+    {% if customFont.boldItalic %}
+        @font-face {
+            font-family: "Custom-Font";
+            src: url("{{ customFont.boldItalic }}");
+            font-weight: bold;
+            font-style: italic;
+        }
+    {% endif %}
+</style>
+
+{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+
+{% set logData = config("Ceres.log.data")|split(', ') %}
+{% set sortValues = config("Ceres.sort.data")|split(', ') %}
+{% set defaultSorting = config('Ceres.sort.defaultSorting') %}
+{% set defaultSortingSearch = config('Ceres.sort.defaultSortingSearch') %}
+{% set rowsPerPage = config('Ceres.pagination.rowsPerPage') | split(', ') %}
+{% set columnsPerPage = config('Ceres.pagination.columnsPerPage') %}
+{% set itemsPerPage = rowsPerPage[0] * columnsPerPage %}
+{% set performanceLevel = config('Ceres.log.performance.level') %}
+{% set itemName = config('Ceres.item.name') %}
+
+{% if LayoutContainer.show("Ceres::Template.StyleOverwrite") | trim is empty %}
+    <link data-sass-root="{{ plugin_path('Ceres') }}" data-sass-original="{{ plugin_path('Ceres') }}/css/ceres-legacy.scss" rel="stylesheet" href="{{ plugin_path('Ceres') }}/css/ceres-legacy.css">
+{% endif %}
+
+{{ LayoutContainer.show("Ceres::Template.StyleOverwrite") }}
+
+<!-- Extend the existing style with a template -->
+{{ LayoutContainer.show("Ceres::Template.Style") }}
+
+{{ get_shop_builder_styles() }}
+
+<meta name="google-site-verification" content="Xdyyv-WmdxEQLdOEn1pEc2MudHoUkPEIGG0AzziUmlc" >
+
+<script>
+var gaProperty = 'UA-17711795-6';
+var disableStr = 'ga-disable-' + gaProperty;
+if (document.cookie.indexOf(disableStr + '=true') > -1) {
+ window[disableStr] = true;
+}
+function gaOptout() {
+ document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+ window[disableStr] = true;
+ alert('Das Tracking durch Google Analytics wurde in Ihrem Browser für diese Website deaktiviert.');
+}
+</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-17711795-6', 'auto');
+ga('set', 'anonymizeIp', true);
+ga('send', 'pageview');
+</script>
