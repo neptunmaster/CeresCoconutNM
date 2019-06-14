@@ -2,7 +2,7 @@
 {% if services.template.isCurrentTemplate('tpl.home') %}
 <link rel="alternate" media="only screen and (max-width: 640px)" href="http://neptunmaster.shopgate.com/"/>
 {% elseif services.template.isCurrentTemplate('tpl.item') %}
-<link rel="alternate" media="only screen and (max-width: 640px)" href="http://neptunmaster.shopgate.com/itempublic/{{ bin_to_hex(item.documents[0].data.variation.id) }}"/>
+<link rel="alternate" media="only screen and (max-width: 640px)" href="http://neptunmaster.shopgate.com/itempublic/{{ bin_to_hex(item.documents[0].data.item.id) }}"/>
 {% elseif services.template.isCurrentTemplate('tpl.category.item') %}
 <link rel="alternate" media="only screen and (max-width: 640px)" href="http://neptunmaster.shopgate.com/category/{{ bin_to_hex(category.id) }}"/>
 {% endif %}
@@ -13,7 +13,7 @@ _shopgate.shop_number = "10675";
 _shopgate.redirect = "start";
 {% elseif services.template.isCurrentTemplate('tpl.item') %}
 _shopgate.redirect = "item";
-_shopgate.item_number_public = "{{ item.documents[0].data.variation.id }}";
+_shopgate.item_number_public = "{{ item.documents[0].data.item.id }}";
 {% elseif services.template.isCurrentTemplate('tpl.category.item') %}
 _shopgate.redirect = "category";
 _shopgate.category_number = "{{ category.id }}";
