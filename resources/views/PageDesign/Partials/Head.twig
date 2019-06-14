@@ -4,7 +4,7 @@
 {% elseif services.template.isCurrentTemplate('tpl.item') %}
 <link rel="alternate" media="only screen and (max-width: 640px)" href="http://neptunmaster.shopgate.com/itempublic/{{item.documents[0].data.variation.id}}"/>
 {% elseif services.template.isCurrentTemplate('tpl.category.item') %}
-<link rel="alternate" media="only screen and (max-width: 640px)" href="http://neptunmaster.shopgate.com/category/{{ category.id }}"/>
+<link rel="alternate" media="only screen and (max-width: 640px)" href="http://neptunmaster.shopgate.com/category/{{ bin_to_hex(category.id) }}"/>
 {% endif %}
 <script type="text/javascript">
 var _shopgate = {};
