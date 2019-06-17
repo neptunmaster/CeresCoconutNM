@@ -20,6 +20,7 @@
 .fl-autocomplete.ui-autocomplete {width: 800px !important}
 .fl-autocomplete.fl-has-two-columns h3 {margin:0; background-color: #0360A5; color: #fff}
 .siegel {margin: 0 5rem;}
+.center {text-align:center}
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu {float: none !important; justify-content: center; -webkit-box-pack:center; -ms-flex-pack:center; text-transform: uppercase;color: #fff; font-weight: 700; font-size: 0.9rem;}
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li {}
 #mainNavbarCollapsable ul.mainmenu > li.ddown > a::after {display: none;}
@@ -51,6 +52,8 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li u
 .textblock h1 {font-size: 1.3rem}
 .textblock h2 {font-size: 1.2rem}
 .textblock h3 {color: #0360A5; font-size: 1.1rem;}
+.textblock.start {margin-top: 1rem}
+.textblock.start .h2, .textblock.start .h3 {color: #EE7624; padding-bottom: 1rem}
 .list-item-carousel .cmp-product-thumb .thumb-image {width: 80%}
 .sidebar-categories {border: 1px solid #fff; box-shadow: 0px 0px 3px 1px #ccc; background: #fff;font-family:Comfortaa,cursive; }
 .sidebar-categories .category-title {background: #0360A5; color: #fff;}
