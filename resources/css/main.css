@@ -17,6 +17,8 @@
 .navbar-brand img {max-height: 8rem}
 .top-bar .search-shown .always-visible-search .search-box-shadow-frame .search-submit {color: #fff; background-color: #EE7624; opacity: 1;}
 .top-bar .search-shown .always-visible-search .search-box-shadow-frame .search-submit:hover {opacity: 0.9}
+.fl-autocomplete.ui-autocomplete {width: 800px !important}
+.fl-autocomplete.fl-has-two-columns h3 {margin:0; background-color: #0360A5; color: #fff}
 .siegel {margin: 0 5rem;}
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu {float: none !important; justify-content: center; -webkit-box-pack:center; -ms-flex-pack:center; text-transform: uppercase;color: #fff; font-weight: 700; font-size: 0.9rem;}
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li {}
