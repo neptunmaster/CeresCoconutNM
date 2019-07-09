@@ -68,3 +68,5 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li u
 .category-description h1 {font-size: 1.3rem;color: #011f44;}
 .category-description h2 {font-size: 1.2rem;color: #0360A5;}
 .category-title {font-family:Comfortaa,cursive; color:#0360A5;}
+.landing-headline {font-family:Comfortaa,cursive; margin-top: 2rem; padding: 2rem 0; text-align:center;}
+.landing-cat {font-family:Comfortaa,cursive; margin-top: 2rem; padding: 1rem; text-align: center}
