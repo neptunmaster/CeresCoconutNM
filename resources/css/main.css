@@ -71,6 +71,7 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li u
 .landing-headline {font-family:Comfortaa,cursive; margin-top: 2rem; margin-bottom: 2rem; padding: 1rem 0; text-align:center;}
 /* .landing-cat {font-family:Comfortaa,cursive; padding: 1rem; text-align: center; display: flex; height: 3.5rem; align-items: center; display: -webkit-flex; -webkit-align-items: center; display: -moz-box; -moz-box-align: center;} */
 .landing-cat {font-family:Comfortaa,cursive; padding: 0.1rem; text-align: center; display: table-cell; height: 3.5rem; vertical-align: middle; width: 50%}
+.landing-cat2 {font-family:Comfortaa,cursive; display: block; padding: 2rem; width: 100%; background: #EE7624; color: #fff; text-align: center; font-size: 2rem}
 #filterCollapse .card {border: 1px solid #efefef; padding: 0.8rem; padding-right: 2rem; max-height: 200px; overflow: hidden; overflow-y: scroll  }
 #filterCollapse .card  h3 {font-size: 1.3rem}
 .list-controls #filterCollapse {z-index: 990 !important}
