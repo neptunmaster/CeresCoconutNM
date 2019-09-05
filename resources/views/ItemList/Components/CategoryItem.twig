@@ -90,7 +90,7 @@
                         * <span v-if="showNetPrices">{{ trans("Ceres::Template.itemExclVAT") }}</span>
                         <span v-else>{{ trans("Ceres::Template.itemInclVAT") }}</span>
 
-                    <span v-if="item.prices.default.unitPrice.value >= 50"> <a {% if ceresConfig.global.shippingCostsCategoryId > 0 %} data-toggle="modal" class="green" href="#shippingscosts"{% endif %} title="Versandkostenfrei in Deutschland">Versandkostenfrei in Deutschland</a></span>
+                    <span v-if="item.prices.default.unitPrice.value >= 50"> | <a {% if ceresConfig.global.shippingCostsCategoryId > 0 %} data-toggle="modal" class="green" href="#shippingscosts"{% endif %} title="Versandkostenfrei in Deutschland">Versandkostenfrei in Deutschland</a></span>
                     <span v-else>{{ trans("Ceres::Template.itemExclusive") }} <a {% if ceresConfig.global.shippingCostsCategoryId > 0 %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.itemShippingCosts") }}">{{ trans("Ceres::Template.itemShippingCosts") }}</a></span>
 
 
