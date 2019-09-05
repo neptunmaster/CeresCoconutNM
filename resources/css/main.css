@@ -76,6 +76,6 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li u
 #filterCollapse .card  h3 {font-size: 1.3rem}
 .list-controls #filterCollapse {z-index: 990 !important}
 .list-controls #filterCollapse .page-content {border-color:#efefef !important }
-.product-list .add-to-basket-lg-container {display: none;}
-.product-list .cmp-product-thumb .special-tags {display: none;}
+.cmp-product-thumb .add-to-basket-lg-container {display: none !important;}
+.cmp-product-thumb .special-tags {display: none !important;}
 .green {color: #639700}
