@@ -14,7 +14,16 @@
 
 <hr>
 
-
+{# }<div v-if="currentVariation.properties">
+    <ul class="bp mt-1">
+    <li class="small text-muted" v-for="(property, index) in currentVariation.properties" v-if="property.group.id == 2">
+    <i aria-hidden="true" class="fa fa-check"></i><span>${ property.texts.value }</span>
+    </li>
+	</ul>
+	</div> #}
+<ul class="bp mt-1">
+<li>test</li>
+</ul>
 
 <div class="mb-5">
     <span class="articlenumber small text-muted">

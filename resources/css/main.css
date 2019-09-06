@@ -108,3 +108,4 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li u
 .widget-item-list-caption > a {display: none;}
 .qty-box {height: 41px}
 .add-to-basket-container {margin-left: -15px}
+.single .title, .page-singleitem .title {font-size: 1.6rem}
