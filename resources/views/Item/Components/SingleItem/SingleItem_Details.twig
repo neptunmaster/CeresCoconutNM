@@ -57,7 +57,8 @@
     <span :content="currentVariation.prices.default.currency"></span>
 </span>
 
-<div class="base-price text-muted my-3" v-if="currentVariation.unit">
+{# }<div class="base-price text-muted my-3" v-if="currentVariation.unit"> #}
+  <div class="base-price text-muted my-3" v-if="currentVariation.unit && currentVariation.unit.names.name != 'Stück'">
     <div>
         {{ trans("Ceres::Template.singleItemContent") }}
         <span>${ currentVariation.unit.content | numberFormat } </span>
@@ -73,7 +74,8 @@
 
 <slot name="after-price"></slot>
 
-<span v-if="currentVariation.variation.availability" :class="'availability badge availability_' + currentVariation.variation.availability.id">
+{# <span v-if="currentVariation.variation.availability" :class="'availability badge availability_' + currentVariation.variation.availability.id"> #}
+<span v-if="(!currentVariation.variation.isMain || !currentVariation.filter.hasChildren) && currentVariation.variation.availability" :class="'availability tag availability_' + currentVariation.variation.availability.id">
     <span>
         ${ currentVariation.variation.availability.names.name }
     </span>
@@ -119,5 +121,5 @@
                         * {% if services.customer.showNetPrices() %}{{ trans("Ceres::Template.singleItemExclVAT") }}{% else %}{{ trans("Ceres::Template.singleItemInclVAT") }}{% endif %} {{ trans("Ceres::Template.singleItemExclusive") }}
     <a {% if ceresConfig.global.shippingCostsCategoryId > 0 %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
                     </span>
-
+<div v-if="currentVariation.prices.default.price.value >= 50" class="alert alert-success ib mt-2 mb-1"><span style="padding-right: 5px; font-size: 30px; position: relative; top: 14px" class="fa fa-child"></span><span>Dieser Artikel wird innerhalb Deutschlands versandkostenfrei versendet.</span></div>
 <slot name="additional-content-after-vat"></slot>
