@@ -106,3 +106,5 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li u
 /* ----- */
 .single .single-carousel, .page-singleitem .single-carousel {border: 1px solid #ddd}
 .widget-item-list-caption > a {display: none;}
+.qty-box {height: 41px}
+.add-to-basket-container {margin-left: -15px}
