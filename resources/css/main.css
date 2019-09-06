@@ -79,3 +79,28 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li u
 .cmp-product-thumb .add-to-basket-lg-container {display: none !important;}
 .cmp-product-thumb .special-tags {display: none !important;}
 .green {color: #639700}
+.single-rightside .articlenumber {display: none;}
+.single .availability {padding: 5px 10px; margin-top: 1rem}
+.tab-content {background: #fff; border: 1px solid #ddd; border-top: 0; padding: 1rem}
+.single .nav-tabs .nav-item .nav-link {border: 1px solid #ddd; background: #eee; color: #444}
+.single-rightside > div:last-child {background: #fff; padding: 1rem; border: 1px solid #ddd}
+.single #single-carousel, .owl-thumbs .owl-thumb {border: 1px solid #ddd}
+.single-rightside .variation-select select option:disabled {background: #efefef}
+/* Überprüfen */
+.ib span {display: table-cell}
+.bp {list-style: none; padding: 0}
+.bp i {padding-right: 5px; color: #898127}
+.input-unit[data-model=vatNumber] {display: none;}
+.basket-item .availability span {color: green}
+#ppButton {text-align: right; padding: 20px 0px 5px 0}
+.modal #ppButton {text-align: right; padding: 0px 13px 10px 0}
+.amzPayButton {text-align: right}
+.wrapper #add-item-to-basket-overlay .amzPayButton {margin: 5px 13px 15px 0}
+.checkout .amzPayButton {text-align: left}
+.amzPayButton img {max-width: 169px !important}
+#add-item-to-basket-overlay .amzPayButton img {height: auto !important}
+.widget-provider-select .cmp-method-list {margin-bottom: 1rem !important}
+.widget-provider-select .amzPayButton {border: 1px solid #ddd; padding: 1.3rem 0.5rem; margin-bottom: 1.5rem !important}
+.basket-small .bulletpoints {list-style: disc}
+.shipping-method-select, .shipping-method-header {display: none}
+/* ----- */
