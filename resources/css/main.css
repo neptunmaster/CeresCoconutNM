@@ -79,7 +79,7 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li u
 .cmp-product-thumb .add-to-basket-lg-container {display: none !important;}
 .cmp-product-thumb .special-tags {display: none !important;}
 .green {color: #639700}
-.single-rightside .articlenumber {display: none;}
+.page-singleitem .articlenumber {display: none;}
 .single .availability {padding: 5px 10px; margin-top: 1rem}
 .tab-content {background: #fff; border: 1px solid #ddd; border-top: 0; padding: 1rem}
 .single .nav-tabs .nav-item .nav-link {border: 1px solid #ddd; background: #eee; color: #444}
