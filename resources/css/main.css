@@ -104,3 +104,5 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li u
 .basket-small .bulletpoints {list-style: disc}
 .shipping-method-select, .shipping-method-header {display: none}
 /* ----- */
+.single .single-carousel, .page-singleitem .single-carousel {border: 1px solid #ddd}
+.widget-item-list-caption > a {display: none;}
