@@ -129,7 +129,7 @@
                             {{ trans("Ceres::Template.basketTotalSum") }} {# ({{ trans("Ceres::Template.basketGross") }}) #}
                         </dt><!--
                         --><dd :class="{ 'font-weight-bold': !showNetPrices }">
-                            ${ basket.basketAmount | currency }
+                            ${ basket.basketAmount | currency } <br />(inkl. ges. MwSt.)
                         </dd>
                     </template>
                     {# Total sum (gross) #}
