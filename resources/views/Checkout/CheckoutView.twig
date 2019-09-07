@@ -121,7 +121,7 @@
                                     {{ overrideAddressLists }}
                                 {% endif %}
                                 {% set overrideShippingProfiles = LayoutContainer.show("Ceres::Checkout.ShippingProfileList") %}
-                                <header class="mb-3">
+                                <header class="mb-3 shipping-method-header">
                                     <h3>{{ trans("Ceres::Template.checkoutShippingProfile") }}</h3>
                                 </header>
 
@@ -150,15 +150,23 @@
                                 {% endif %}
                                 {{ LayoutContainer.show("Ceres::Checkout.AfterPaymentList") }}
 
-                                <header>
+                            {#    <header>
                                     <h3>{{ trans("Ceres::Template.checkoutContactWish") }}</h3>
                                 </header>
 
                                 <contact-wish-input class="pb-3"></contact-wish-input>
-
+                            #}
                                 <shipping-privacy-hint-check></shipping-privacy-hint-check>
 
-                                <accept-gtc-check></accept-gtc-check>
+                                <hr>
+								<p>Bitte beachten Sie unsere Allgemeinen Geschäftsbedingungen sowie unsere Widerrufsbelehrung und Datenschutzerklärung</p>
+								<p>
+									<a href="/gtc" target="_blank">AGB öffnen</a><br>
+									<a href="/cancellation-rights" target="_blank">Widerrufsrecht öffnen</a><br>
+									<a href="/privacy-policy" target="_blank">Datenschutzerklärung öffnen</a>
+								</p>
+
+                              {#  <accept-gtc-check></accept-gtc-check> #}
                                 {{ LayoutContainer.show("Ceres::Checkout.OptIns") }}
                             </div>
                         </div>
