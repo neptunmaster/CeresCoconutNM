@@ -110,3 +110,5 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li u
 .add-to-basket-container {margin-left: -15px}
 .single .title, .page-singleitem .title {font-size: 1.6rem}
 .single .price, .page-singleitem .price {font-weight: normal; color: #0360A5}
+.basket-preview-content .cmp-totals dl dt:nth-child(1),.basket-preview-content .cmp-totals dl dd:nth-child(1) {display:none;}
+.basket-preview-content .cmp-totals dl dt:nth-child(3),.basket-preview-content .cmp-totals dl dd:nth-child(3) {display:none;}
