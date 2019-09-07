@@ -67,6 +67,12 @@
                                     </div>
                                 </template>
                             </div>
+                            {% if "basket.item.availability" in basketDetailsData %}
+                                <div v-if="basketItem.variation.data.variation.availability.names.name">
+                                    <strong>{{ trans("Ceres::Template.basketAvailability") }}:</strong>
+                                    <span>${ basketItem.variation.data.variation.availability.names.name }</span>
+                                </div>
+                            {% endif %}
                         </div>
                     </div>
 
@@ -132,12 +138,6 @@
                             </div>
                         {% endif %}
 
-                        {% if "basket.item.availability" in basketDetailsData %}
-                            <div v-if="basketItem.variation.data.variation.availability.names.name">
-                                <strong>{{ trans("Ceres::Template.basketAvailability") }}:</strong>
-                                <span>${ basketItem.variation.data.variation.availability.names.name }</span>
-                            </div>
-                        {% endif %}
 
                         {% if "basket.item.description_long" in basketDetailsData %}
                             <p class="my-3" v-if="basketItem.variation.data.texts.description" v-html="basketItem.variation.data.texts.description"></p>
