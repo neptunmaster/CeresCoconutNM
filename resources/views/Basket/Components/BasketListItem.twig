@@ -68,11 +68,20 @@
                                 </template>
                             </div>
                             {% if "basket.item.availability" in basketDetailsData %}
+                                <div class="item-small-prices availability">
                                 <div v-if="basketItem.variation.data.variation.availability.names.name">
                                     <strong>{{ trans("Ceres::Template.basketAvailability") }}:</strong>
                                     <span>${ basketItem.variation.data.variation.availability.names.name }</span>
                                 </div>
+                                </div>
                             {% endif %}
+                            <div v-if="basketItem.variation.data.properties">
+                                <ul class="bulletpoints mt-1 pl-3">
+                                <li class="articlenumber small text-muted" v-for="(property, index) in basketItem.variation.data.properties" v-if="property.group.id == 2">
+                                <span>${ property.texts.value }</span>
+                                </li>
+                            	</ul>
+                            </div>
                         </div>
                     </div>
 
