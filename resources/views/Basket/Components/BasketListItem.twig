@@ -140,12 +140,12 @@
                             </div>
                         {% endif %}
 
-                        {% if "basket.item.customNumber" in basketDetailsData %}
+                      {#  {% if "basket.item.customNumber" in basketDetailsData %}
                             <div v-if="basketItem.variation.data.variation.number">
                                 <strong>{{ trans("Ceres::Template.basketItemNumber") }}:</strong>
                                 <span>${ basketItem.variation.data.variation.number }</span>
                             </div>
-                        {% endif %}
+                        {% endif %} #}
 
 
                         {% if "basket.item.description_long" in basketDetailsData %}
