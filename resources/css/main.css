@@ -114,5 +114,5 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li u
 .basket-preview-content .cmp-totals dl > dt:nth-of-type(1), .basket-preview-content .cmp-totals dl > dd:nth-of-type(1) {display: none;}
 .basket-preview-content .cmp-totals dl > dt:nth-of-type(3), .basket-preview-content .cmp-totals dl > dd:nth-of-type(3) {display: none;}
 .basket-preview-content .cmp-totals dl > dt:nth-of-type(3), .basket-preview-content .cmp-totals dl > dd:nth-of-type(3) {display: none;}
-*/
 .basket-preview-content .cmp-totals dl > dt:nth-of-type(odd), .basket-preview-content .cmp-totals dl > dd:nth-of-type(odd) {display: none;}
+*/
