@@ -21,7 +21,7 @@
                 {# Basket value (gross) #}
                 <template v-if="visibleFields.includes('basketValueGross')">
                     <dt :class="{ 'font-weight-bold': !showNetPrices }">
-                        {{ trans("Ceres::Template.basketValue") }}{# ({{ trans("Ceres::Template.basketGross") #} }})
+                        {{ trans("Ceres::Template.basketValue") }}{# ({{ trans("Ceres::Template.basketGross") }}) #}
                     </dt><!--
                     --><dd :class="{ 'font-weight-bold': !showNetPrices }">
                         ${ calculateBaseValue(basket.itemSum, basket.basketRebate)| currency  }
@@ -72,7 +72,7 @@
                 {# Shipping (gross) #}
                 <template v-if="visibleFields.includes('shippingCostsGross')">
                     <dt :class="{ 'font-weight-bold': !showNetPrices }">
-                        {{ trans("Ceres::Template.basketShippingCosts") }} {# ({{ trans("Ceres::Template.basketGross") #} }})
+                        {{ trans("Ceres::Template.basketShippingCosts") }} {# ({{ trans("Ceres::Template.basketGross") }}) #}
                     </dt><!--
                     --><dd :class="{ 'font-weight-bold': !showNetPrices }">
                         ${ basket.shippingAmount | currency }
@@ -126,7 +126,7 @@
                     {# Total sum (gross) #}
                     <template v-if="visibleFields.includes('totalSumGross')">
                         <dt :class="{ 'font-weight-bold': !showNetPrices }">
-                            {{ trans("Ceres::Template.basketTotalSum") }} {# ({{ trans("Ceres::Template.basketGross") #} }})
+                            {{ trans("Ceres::Template.basketTotalSum") }} {# ({{ trans("Ceres::Template.basketGross") }}) #}
                         </dt><!--
                         --><dd :class="{ 'font-weight-bold': !showNetPrices }">
                             ${ basket.basketAmount | currency }
