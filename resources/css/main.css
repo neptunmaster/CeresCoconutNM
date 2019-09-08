@@ -92,7 +92,7 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li u
 .bp i {padding-right: 5px; color: #0360A5}
 .input-unit[data-model=vatNumber] {display: none;}
 .basket-item .availability span {color: green}
-#ppButton {text-align: right; padding: 20px 0px 5px 0}
+#ppButton {text-align: right; padding: 0px 0px 20px 0}
 .modal #ppButton {text-align: right; padding: 0px 13px 10px 0}
 .amzPayButton {text-align: right}
 .wrapper #add-item-to-basket-overlay .amzPayButton {margin: 5px 13px 15px 0}
