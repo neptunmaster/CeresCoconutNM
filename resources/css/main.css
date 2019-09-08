@@ -118,3 +118,18 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li u
 */
 .basket-preview-content .bulletpoints {display: none;}
 .checkout-gtc {margin-top: 2rem; border: 1px solid #dcdbd8; border-radius: .1rem; padding: 0.5rem}
+.checkout .amzPayButton {border: 1px solid #dcdbd8;
+    border-radius: .1rem;
+    cursor: pointer;
+    height: 5rem;
+    padding: .5em;
+    margin-bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;margin-top: -10px}
