@@ -232,6 +232,9 @@
     {% include "Ceres::Widgets.ShopBuilderDataStore" %}
 {% endif %}
 
+{{ LayoutContainer.show("Ceres::Script.AfterScriptsLoaded") }}
+
+
 <script>
     window.vueEventHub = new Vue();
 
@@ -259,8 +262,6 @@
         });
       }
   </script>
-
-    {{ LayoutContainer.show("Ceres::Script.AfterScriptsLoaded") }}
 
         {{ get_filtered_tags() }}
 
